@@ -1,0 +1,3 @@
+name: ${name}
+main: ${groupId}.${artifactId}
+version: ${version}

@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.akpwebdesign.bukkit</groupId>
+	<artifactId>VanishCompatSay</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>VanishCompatSay</name>
+	<description>Overrides the /say command to be more compatible with VanishNoPacket</description>
+	<repositories>
+		<repository>
+			<id>repobo-snap</id>
+			<url>http://repo.bukkit.org/content/groups/public</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>bukkit</artifactId>
+			<version>1.7.2-R0.3-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<filtering>true</filtering>
+				<targetPath>../filtered-sources/java</targetPath>
+			</resource>
+		</resources>
+		<!-- Overrule the default pom source directory to match our generated sources 
+			so the compiler will pick them up -->
+		<sourceDirectory>target/filtered-sources/java</sourceDirectory>
+	</build>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+</project>
