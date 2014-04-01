@@ -3,13 +3,17 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.akpwebdesign.bukkit</groupId>
 	<artifactId>VanishCompatSay</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>VanishCompatSay</name>
 	<description>Overrides the /say command to be more compatible with VanishNoPacket</description>
 	<repositories>
 		<repository>
-			<id>repobo-snap</id>
+			<id>bukkit-repo</id>
 			<url>http://repo.bukkit.org/content/groups/public</url>
+		</repository>
+		<repository>
+			<id>raid-repo</id>
+			<url>http://dev.raid-craft.de/nexus/content/groups/public</url>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -17,6 +21,11 @@
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
 			<version>1.7.2-R0.3-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kitteh</groupId>
+			<artifactId>VanishNoPacket</artifactId>
+			<version>3.18.10</version>
 		</dependency>
 	</dependencies>
 	<build>
