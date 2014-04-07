@@ -12,8 +12,8 @@
 			<url>http://repo.bukkit.org/content/groups/public</url>
 		</repository>
 		<repository>
-			<id>raid-repo</id>
-			<url>http://dev.raid-craft.de/nexus/content/groups/public</url>
+			<id>kitteh-repo</id>
+			<url>http://repo.kitteh.org/content/groups/public</url>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -25,7 +25,7 @@
 		<dependency>
 			<groupId>org.kitteh</groupId>
 			<artifactId>VanishNoPacket</artifactId>
-			<version>3.18.10</version>
+			<version>3.18.11-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<build>
