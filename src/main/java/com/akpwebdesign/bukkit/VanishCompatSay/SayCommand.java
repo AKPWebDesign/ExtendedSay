@@ -1,26 +1,30 @@
 package com.akpwebdesign.bukkit.VanishCompatSay;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 
-public class SayCommand implements CommandExecutor {
+public class SayCommand implements TabExecutor {
 
-//	@Override
-//	public List<String> tabComplete(CommandSender sender, String alias,
-//			String[] args) throws IllegalArgumentException {
-//		Validate.notNull(sender, "Sender cannot be null");
-//		Validate.notNull(args, "Arguments cannot be null");
-//
-//		if (args.length >= 1) {
-//			return super.tabComplete(sender, alias, args);
-//		}
-//		return ImmutableList.of();
-//	}
+	public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args)
+	{
+		
+		//set up new List for our autocomplete data
+		List<String> autoComplete = new ArrayList<String>();
+		
+		for(Player player : Bukkit.getOnlinePlayers()) {
+			autoComplete.add(player.getDisplayName());
+		}
+
+		return autoComplete;
+	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label,
 			String[] args) {
