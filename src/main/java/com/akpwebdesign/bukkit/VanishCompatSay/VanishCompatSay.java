@@ -10,6 +10,7 @@ public class VanishCompatSay extends JavaPlugin {
 		// This will throw a NullPointerException if you don't have the command
 		// defined in your plugin.yml file!
 		getCommand("say").setExecutor(new SayCommand());
+		getCommand("msay").setExecutor(new MSayCommand());
 	}
 
 	@Override

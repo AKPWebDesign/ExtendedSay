@@ -8,3 +8,9 @@ commands:
       usage: /say <message ...>
       permission: bukkit.command.say
       permission-message: You don't have permission to use this command.
+      
+   say:
+      description: Broadcasts the given message as yourself.
+      usage: /msay <message ...>
+      permission: bukkit.command.say
+      permission-message: You don't have permission to use this command.

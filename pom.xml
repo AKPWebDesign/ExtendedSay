@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.akpwebdesign.bukkit</groupId>
 	<artifactId>VanishCompatSay</artifactId>
-	<version>1.0.1</version>
+	<version>1.1.0</version>
 	<name>VanishCompatSay</name>
 	<description>Overrides the /say command to be more compatible with VanishNoPacket</description>
 	<repositories>
