@@ -1,7 +1,6 @@
 name: ${name}
 main: ${groupId}.${artifactId}.${name}
 version: ${version}
-depend: [VanishNoPacket]
 commands:
    say:
       description: Broadcasts the given message as the console.
@@ -9,8 +8,14 @@ commands:
       permission: bukkit.command.say
       permission-message: You don't have permission to use this command.
       
-   say:
+   msay:
       description: Broadcasts the given message as yourself.
       usage: /msay <message ...>
+      permission: bukkit.command.say
+      permission-message: You don't have permission to use this command.
+      
+   osay:
+      description: Broadcasts the given message as someone else.
+      usage: /osay <name> <message ...>
       permission: bukkit.command.say
       permission-message: You don't have permission to use this command.

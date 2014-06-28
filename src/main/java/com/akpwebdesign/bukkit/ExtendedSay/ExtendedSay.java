@@ -1,8 +1,8 @@
-package com.akpwebdesign.bukkit.VanishCompatSay;
+package com.akpwebdesign.bukkit.ExtendedSay;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class VanishCompatSay extends JavaPlugin {
+public class ExtendedSay extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		getLogger().info("${name} ${version} has been enabled!");
@@ -11,6 +11,7 @@ public class VanishCompatSay extends JavaPlugin {
 		// defined in your plugin.yml file!
 		getCommand("say").setExecutor(new SayCommand());
 		getCommand("msay").setExecutor(new MSayCommand());
+		getCommand("osay").setExecutor(new OSayCommand());
 	}
 
 	@Override

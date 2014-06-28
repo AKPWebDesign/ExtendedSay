@@ -2,10 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.akpwebdesign.bukkit</groupId>
-	<artifactId>VanishCompatSay</artifactId>
-	<version>1.1.0</version>
-	<name>VanishCompatSay</name>
-	<description>Overrides the /say command to be more compatible with VanishNoPacket</description>
+	<artifactId>ExtendedSay</artifactId>
+	<version>1.2.0</version>
+	<name>ExtendedSay</name>
 	<repositories>
 		<repository>
 			<id>bukkit-repo</id>
@@ -21,11 +20,6 @@
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
 			<version>1.7.2-R0.3-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.kitteh</groupId>
-			<artifactId>VanishNoPacket</artifactId>
-			<version>3.18.11-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -47,4 +41,5 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	<description>Extends the built-in /say command, and adds a few other commands related to /say.</description>
 </project>
