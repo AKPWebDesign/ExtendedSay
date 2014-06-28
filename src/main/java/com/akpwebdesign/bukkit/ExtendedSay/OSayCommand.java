@@ -29,7 +29,7 @@ public class OSayCommand implements CommandExecutor {
 			String[] args) {
 		if (!sender.hasPermission("bukkit.command.say"))
 			return true;
-		if (args.length == 0) {
+		if (args.length < 2) {
 			sender.sendMessage(ChatColor.RED + "Usage: /osay <name> <message ...> (Example: '/osay Can you see?')");
 			return false;
 		}
@@ -39,7 +39,7 @@ public class OSayCommand implements CommandExecutor {
 		message.append(args[0]);
 		message.append(ChatColor.LIGHT_PURPLE).append("] ");
 
-		if (args.length > 0) {
+		if (args.length > 1) {
 			message.append(args[1]);
 			for (int i = 2; i < args.length; i++) {
 				message.append(" ").append(args[i]);
