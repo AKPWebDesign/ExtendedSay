@@ -11,6 +11,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class OSayCommand implements CommandExecutor {
+	
+	private ExtendedSay plugin;
+	
+	public OSayCommand(ExtendedSay plugin) {
+		super();
+		this.plugin = plugin;
+	}
 
 	public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args)
 	{
@@ -33,11 +40,19 @@ public class OSayCommand implements CommandExecutor {
 			sender.sendMessage(ChatColor.RED + "Usage: /osay <name> <message ...> (Example: '/osay Can you see?')");
 			return false;
 		}
+		
+		ChatColor color = ChatColor.LIGHT_PURPLE;
+		
+		String colorString = this.plugin.getConfig().getString("colors.osay");
+		
+		if(ChatColor.valueOf(colorString).isColor())
+			color = ChatColor.valueOf(colorString);
+
 
 		StringBuilder message = new StringBuilder();
-		message.append(ChatColor.LIGHT_PURPLE).append("[");
+		message.append(color).append("[");
 		message.append(args[0]);
-		message.append(ChatColor.LIGHT_PURPLE).append("] ");
+		message.append(color).append("] ");
 
 		if (args.length > 1) {
 			message.append(args[1]);

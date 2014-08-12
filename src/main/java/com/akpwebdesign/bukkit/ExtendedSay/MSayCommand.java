@@ -9,6 +9,13 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 public class MSayCommand implements CommandExecutor {
+	
+	private ExtendedSay plugin;
+	
+	public MSayCommand(ExtendedSay plugin) {
+		super();
+		this.plugin = plugin;
+	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label,
 			String[] args) {
@@ -18,9 +25,16 @@ public class MSayCommand implements CommandExecutor {
 			sender.sendMessage(ChatColor.RED + "Usage: /msay <message ...>");
 			return false;
 		}
+		
+		ChatColor color = ChatColor.LIGHT_PURPLE;
+		
+		String colorString = this.plugin.getConfig().getString("colors.msay");
+		
+		if(ChatColor.valueOf(colorString).isColor())
+			color = ChatColor.valueOf(colorString);
 
 		StringBuilder message = new StringBuilder();
-		message.append(ChatColor.LIGHT_PURPLE).append("[");
+		message.append(color).append("[");
 		if (sender instanceof ConsoleCommandSender) {
 			message.append("Server");
 		} else if (sender instanceof Player) {
@@ -28,7 +42,7 @@ public class MSayCommand implements CommandExecutor {
 		} else {
 			message.append(sender.getName());
 		}
-		message.append(ChatColor.LIGHT_PURPLE).append("] ");
+		message.append(color).append("] ");
 
 		if (args.length > 0) {
 			message.append(args[0]);

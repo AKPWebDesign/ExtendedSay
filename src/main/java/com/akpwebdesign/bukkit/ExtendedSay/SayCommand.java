@@ -11,6 +11,13 @@ import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 
 public class SayCommand implements TabExecutor {
+	
+	private ExtendedSay plugin;
+	
+	public SayCommand(ExtendedSay plugin) {
+		super();
+		this.plugin = plugin;
+	}
 
 	public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args)
 	{
@@ -33,11 +40,19 @@ public class SayCommand implements TabExecutor {
 			sender.sendMessage(ChatColor.RED + "Usage: /say <message ...>");
 			return false;
 		}
+		
+		ChatColor color = ChatColor.LIGHT_PURPLE;
+		
+		String colorString = this.plugin.getConfig().getString("colors.say");
+		
+		if(ChatColor.valueOf(colorString).isColor())
+			color = ChatColor.valueOf(colorString);
+
 
 		StringBuilder message = new StringBuilder();
-		message.append(ChatColor.LIGHT_PURPLE).append("[");
+		message.append(color).append("[");
 		message.append("Server");
-		message.append(ChatColor.LIGHT_PURPLE).append("] ");
+		message.append(color).append("] ");
 
 		if (args.length > 0) {
 			message.append(args[0]);

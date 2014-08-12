@@ -6,12 +6,12 @@ public class ExtendedSay extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		getLogger().info("${name} ${version} has been enabled!");
+		
+		this.saveDefaultConfig();
 
-		// This will throw a NullPointerException if you don't have the command
-		// defined in your plugin.yml file!
-		getCommand("say").setExecutor(new SayCommand());
-		getCommand("msay").setExecutor(new MSayCommand());
-		getCommand("osay").setExecutor(new OSayCommand());
+		getCommand("say").setExecutor(new SayCommand(this));
+		getCommand("msay").setExecutor(new MSayCommand(this));
+		getCommand("osay").setExecutor(new OSayCommand(this));
 	}
 
 	@Override
