@@ -8,6 +8,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MSayCommand implements CommandExecutor {
 	
 	private ExtendedSay plugin;
@@ -15,6 +18,19 @@ public class MSayCommand implements CommandExecutor {
 	public MSayCommand(ExtendedSay plugin) {
 		super();
 		this.plugin = plugin;
+	}
+
+	public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args)
+	{
+
+		//set up new List for our autocomplete data
+		List<String> autoComplete = new ArrayList<String>();
+
+		for(Player player : Bukkit.getOnlinePlayers()) {
+			autoComplete.add(player.getDisplayName());
+		}
+
+		return autoComplete;
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label,
